@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FPT Polytechnic</title>
+    <meta charset="utf-8" />
+  </head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    .body {
+      min-height: 100%;
+      font-family: "Times New Roman", Times, serif;
+      justify-content: center;
+      text-align: center;
+      display: flex;
+      width: 100%;
+    }
+    .container {
+      position: relative;
+      min-width: 1000px;
+      margin: 0 auto;
+    }
+    .container .header .sub-header {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-color: orangered;
+      border-bottom-left-radius: 30px;
+      box-shadow: 0px 5px 10px white;
+    }
+    .container .header .sub-header li {
+      height: 40px;
+      padding: 10px;
+      font-size: 17px;
+      display: inline-block;
+      font-variant: small-caps;
+      list-style-type: none;
+    }
+    .container .header .sub-header li a {
+      color: white;
+      padding-left: 10px;
+      text-decoration: none;
+    }
+    .container .header .text-header {
+      position: absolute;
+      top: 14%;
+      left: 15px;
+      padding: 10px;
+    }
+    .container .header .text-header .top {
+      font-size: 60px;
+      color: white;
+      padding-left: 10px;
+      text-shadow: 0 0 10px orangered;
+      font-family: fantasy;
+    }
+    .container .header .text-header .bottom {
+      color: orangered;
+      letter-spacing: 5px;
+      font-size: 25px;
+      font-weight: 700;
+      border-top: 1px solid orangered;
+    }
+    .container .header .text-header span {
+      font-variant: small-caps;
+    }
+    .container > .header {
+      background-image: url("https://internetvietnam.net/wp-content/uploads/2016/02/sinh-vien-fpt-thai-nguyen-tham-quan-doanh-nghiep.jpg");
+      background-size: 100% 100%;
+      height: 0px;
+      padding-bottom: 25%;
+    }
+    .container > .nav {
+      position: relative;
+      line-height: 40px;
+      background-color: orangered;
+      color: white;
+      font-variant: small-caps;
+      z-index: 1;
+    }
+    .container > .nav ul {
+      display: flex;
+      text-align: left;
+      padding-left: 10px;
+      list-style-type: none;
+    }
+    .container > .article {
+      min-height: 400px;
+      width: 75%;
+      background-color: white;
+      float: left;
+    }
+    .container > .aside {
+      min-height: 400px;
+      background-color: lightgray;
+      width: 25%;
+      float: right;
+      text-align: center;
+      list-style-type: none;
+    }
+    .container > .footer {
+      border-top: 5px double orangered;
+      line-height: 50px;
+      background-color: lightcyan;
+      text-align: center;
+      font-variant: small-caps;
+      clear: both;
+    }
+    .container > .nav a {
+      color: white;
+      text-decoration: none;
+      padding-right: 20px;
+    }
+    .container .header .sub-header a:hover,
+    .container > .nav a:hover {
+      color: yellow;
+      text-decoration: underline;
+    }
+    .container > .nav .sub-nav {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    iframe[name="page"] {
+      width: 100%;
+      min-height: 400px;
+    }
+    .container .vmenu {
+      padding: 0;
+      margin: 5px;
+      list-style: none;
+      border-radius: 3px;
+      box-shadow: 0 0 2px gray;
+    }
+    .container .vmenu a {
+      background: url("https://i.pinimg.com/originals/07/38/f5/0738f509086924a0a2054de683e18c63.png")
+        no-repeat 10px center;
+      display: block;
+      border-bottom: 1px dotted orangered;
+      color: orangered;
+      font-variant: small-caps;
+      font-size: larger;
+      text-decoration: none;
+      padding: 8px 5px 8px 30px;
+    }
+    .container .vmenu a:hover {
+      background: url("https://anhdepfree.com/wp-content/uploads/2020/06/icon-buon-facebook.png")
+        no-repeat 10px center;
+      border-bottom: 1px dotted white;
+      background-color: orangered;
+      color: white;
+      font-weight: bold;
+    }
+    .container .prod {
+      margin: 5px;
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 0 0 5px gray;
+      text-align: center;
+      position: relative;
+    }
+    .prod > .name {
+      font-variant: small-caps;
+      color: orangered;
+    }
+    .prod > .image {
+      max-width: 98%;
+      height: 150px;
+      margin-bottom: 10px;
+    }
+    .prod > .price button {
+      position: absolute;
+      left: 5px;
+      bottom: 5px;
+      font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+      font-size: 15px;
+      color: orange;
+    }
+    .prod > .icons {
+      position: absolute;
+      right: 5px;
+      bottom: 5px;
+      width: 25px;
+    }
+    .prod > .new-icon {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+    .column {
+      float: left;
+      width: 25%;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="sub-header">
+          <ul>
+            <li><a href="uses.html">Đăng nhập</a></li>
+            <li><a href="password.html">Đăng ký</a></li>
+            <li><a href="enter.html">Quên mật khẩu</a></li>
+          </ul>
+        </div>
+        <div class="text-header">
+          <p class="top">FPT <span>Polytechnic</span></p>
+          <p class="bottom">Thực học-thực nghiệp</p>
+        </div>
+      </div>
+      <div class="nav">
+        <div class="text-nav">
+          <ul>
+            <li><a href="index.html">Trang chủ</a></li>
+            <li><a href="about.html" target="page">Giới thiệu</a></li>
+            <li><a href="link.html">Liên hệ</a></li>
+            <li><a href="meet.html">Góp ý</a></li>
+            <li><a href="#">Hỏi-đáp</a></li>
+            <li><a href="food.html">Sản phẩm</a></li>
+          </ul>
+        </div>
+        <div class="sub-nav">
+          <ul>
+            <li><a href="#">English</a></li>
+            <li><a href="#">Tiếng việt</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="article">
+        <div class="column">
+          <div class="san-pham">
+            <div class="prod">
+              <div class="name">France perfume</div>
+              <img
+                class="image"
+                src="https://cdn.tgdd.vn/Products/Images/2386/79278/stt-vinamilk-kd-fino-220ml-1-6.jpg"
+              />
+              <div class="price"><button>$ 100</button></div>
+              <div class="icons">
+                <img src="images/Heart.png" />
+                <img src="images/Letter.png" />
+                <img src="images/Basket.png" />
+              </div>
+              <img class="new-icon" src="images/new_icon.gif" />
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="san-pham">
+            <div class="prod">
+              <div class="name">France perfume</div>
+              <img
+                class="image"
+                src="https://cdn.tgdd.vn/Products/Images/2386/79278/stt-vinamilk-kd-fino-220ml-1-6.jpg"
+              />
+              <div class="price"><button>$ 100</button></div>
+              <div class="icons">
+                <img src="images/Heart.png" />
+                <img src="images/Letter.png" />
+                <img src="images/Basket.png" />
+              </div>
+              <img class="new-icon" src="images/new_icon.gif" />
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="san-pham">
+            <div class="prod">
+              <div class="name">France perfume</div>
+              <img
+                class="image"
+                src="https://cdn.tgdd.vn/Products/Images/2386/79278/stt-vinamilk-kd-fino-220ml-1-6.jpg"
+              />
+              <div class="price"><button>$ 100</button></div>
+              <div class="icons">
+                <img src="images/Heart.png" />
+                <img src="images/Letter.png" />
+                <img src="images/Basket.png" />
+              </div>
+              <img class="new-icon" src="images/new_icon.gif" />
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="san-pham">
+            <div class="prod">
+              <div class="name">France perfume</div>
+              <img
+                class="image"
+                src="https://cdn.tgdd.vn/Products/Images/2386/79278/stt-vinamilk-kd-fino-220ml-1-6.jpg"
+              />
+              <div class="price"><button>$ 100</button></div>
+              <div class="icons">
+                <img src="images/Heart.png" />
+                <img src="images/Letter.png" />
+                <img src="images/Basket.png" />
+              </div>
+              <img class="new-icon" src="images/new_icon.gif" />
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="san-pham">
+            <div class="prod">
+              <div class="name">France perfume</div>
+              <img
+                class="image"
+                src="https://cdn.tgdd.vn/Products/Images/2386/79278/stt-vinamilk-kd-fino-220ml-1-6.jpg"
+              />
+              <div class="price"><button>$ 100</button></div>
+              <div class="icons">
+                <img src="images/Heart.png" />
+                <img src="images/Letter.png" />
+                <img src="images/Basket.png" />
+              </div>
+              <img class="new-icon" src="images/new_icon.gif" />
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="san-pham">
+            <div class="prod">
+              <div class="name">France perfume</div>
+              <img
+                class="image"
+                src="https://cdn.tgdd.vn/Products/Images/2386/79278/stt-vinamilk-kd-fino-220ml-1-6.jpg"
+              />
+              <div class="price"><button>$ 100</button></div>
+              <div class="icons">
+                <img src="images/Heart.png" />
+                <img src="images/Letter.png" />
+                <img src="images/Basket.png" />
+              </div>
+              <img class="new-icon" src="images/new_icon.gif" />
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="san-pham">
+            <div class="prod">
+              <div class="name">France perfume</div>
+              <img
+                class="image"
+                src="https://cdn.tgdd.vn/Products/Images/2386/79278/stt-vinamilk-kd-fino-220ml-1-6.jpg"
+              />
+              <div class="price"><button>$ 100</button></div>
+              <div class="icons">
+                <img src="images/Heart.png" />
+                <img src="images/Letter.png" />
+                <img src="images/Basket.png" />
+              </div>
+              <img class="new-icon" src="images/new_icon.gif" />
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="san-pham">
+            <div class="prod">
+              <div class="name">France perfume</div>
+              <img
+                class="image"
+                src="https://cdn.tgdd.vn/Products/Images/2386/79278/stt-vinamilk-kd-fino-220ml-1-6.jpg"
+              />
+              <div class="price"><button>$ 100</button></div>
+              <div class="icons">
+                <img src="images/Heart.png" />
+                <img src="images/Letter.png" />
+                <img src="images/Basket.png" />
+              </div>
+              <img class="new-icon" src="images/new_icon.gif" />
+            </div>
+          </div>
+        </div>
+        <iframe
+          name="page"
+          src="home.html"
+          scrolling="auto"
+          frameborder="0"
+        ></iframe>
+      </div>
+      <div class="aside">
+        <ul class="vmenu">
+          <li><a href="#">Máy tính xách tay</a></li>
+          <li><a href="#">Điện thoại di động</a></li>
+          <li><a href="#">Máy quay phim</a></li>
+          <li><a href="#">Máy chụp ảnh</a></li>
+        </ul>
+      </div>
+      <div class="footer">
+        <span>FPT Polytechnic @ 2017. All rights reserved</span>
+      </div>
+    </div>
+  </body>
+</html>
